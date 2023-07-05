@@ -116,7 +116,7 @@ export default function SalesBoard(props) {
   }, [userProfileData.liveSalesCount]);
 
   return (
-    <div className="container" style={backgroundStyles}>
+    <div className="salesboard-container" style={backgroundStyles}>
       <div className="sign-in-toggler-container">
         <div className="sign-out-save-btn-container">
           <button

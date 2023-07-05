@@ -10,14 +10,14 @@ body {
   color: #ffffff;
 }
 
-.container,
+.salesboard-container,
 .sign-in-container {
   flex-direction: column;
   align-items: center;
   padding: 1em;
 }
 
-.container {
+.salesboard-container {
   display: flex;
   position: relative;
   width: 100%;
@@ -27,10 +27,11 @@ body {
 .sign-in-container {
   position: absolute;
   z-index: 2;
-  top: 220px;
-  left: 400px;
-  justify-content: center;
-  background-color: #201a23;
+  top: 70%;
+  left: 50%;
+  width: 600px;
+  transform: translate(-50%, -50%);
+  background-color: #9e4770;
   padding-bottom: 3em;
   border-radius: 10px;
 }
@@ -139,7 +140,6 @@ button {
 button:hover,
 button:focus {
   cursor: pointer;
-  background: #0ea5e9;
 }
 
 .sales-btn-container button:first-child {
@@ -154,6 +154,11 @@ button:focus {
   margin-top: 1em;
   height: 50px;
   color: #ffffff;
+  background-color: #201a23;
+}
+
+.signin-fields + button:hover {
+  background-color: #0ea5e9;
 }
 
 h3 {
