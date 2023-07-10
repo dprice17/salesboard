@@ -2,38 +2,36 @@ html,
 body {
   margin: 0;
   padding: 0;
+  color: #ffffff;
+  width: 100vw;
+  height: 100vh;
 }
 
-body {
+.salesboard,
+.sign-in-page {
   display: flex;
   justify-content: center;
-  color: #ffffff;
+  width: 941px;
+  max-height: 1050px;
+  margin: 0 auto;
 }
 
 .salesboard-container,
 .sign-in-container {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1em;
+  padding: 1.5em;
 }
 
 .salesboard-container {
-  display: flex;
-  position: relative;
   width: 100%;
-  height: 100%;
 }
 
 .sign-in-container {
-  position: absolute;
-  z-index: 2;
-  top: 70%;
-  left: 50%;
-  width: 600px;
-  transform: translate(-50%, -50%);
+  width: 60%;
   background-color: #9e4770;
   padding-bottom: 3em;
-  border-radius: 10px;
 }
 
 .signin-fields {
@@ -44,10 +42,11 @@ body {
 }
 
 input {
-  width: 300px;
+  width: 400px;
   height: 35px;
   border-radius: 10px;
   padding: 0.3em;
+  font-size: 1.2rem;
   color: #000000;
   border: none;
 }
@@ -66,6 +65,7 @@ input {
   padding: 0.1em;
   background-color: #201a23;
   margin-left: 0.5em;
+  cursor: pointer;
 }
 
 .toggler {
@@ -81,6 +81,22 @@ input {
   display: flex;
   align-items: center;
   height: 50px;
+}
+
+button {
+  background-color: #9e4770;
+  width: 180px;
+  height: 80px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+}
+
+button:hover,
+.toggler-container:hover {
+  border: 2px solid #ffffff;
 }
 
 .sign-out-btn {
@@ -127,19 +143,10 @@ h1 {
   margin-top: 1em;
 }
 
-button {
-  background: #9e4770;
-  width: 180px;
-  height: 80px;
-  font-size: 1.5rem;
-  border-radius: 10px;
-  border: none;
-  margin-bottom: 0.5em;
-}
-
-button:hover,
-button:focus {
-  cursor: pointer;
+.signin-fields + button {
+  margin-top: 1em;
+  color: #ffffff;
+  background-color: #201a23;
 }
 
 .sales-btn-container button:first-child {
@@ -148,17 +155,6 @@ button:focus {
 
 .signin-fields input:first-child {
   margin-bottom: 1em;
-}
-
-.signin-fields + button {
-  margin-top: 1em;
-  height: 50px;
-  color: #ffffff;
-  background-color: #201a23;
-}
-
-.signin-fields + button:hover {
-  background-color: #0ea5e9;
 }
 
 h3 {
@@ -191,8 +187,7 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2em;
-  width: 400px;
+  width: 393px;
   height: 86px;
   background-color: #44354a;
   border-radius: 50px;

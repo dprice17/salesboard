@@ -59,7 +59,7 @@ export default function SigninPage() {
   };
 
   return (
-    <div>
+    <div className="sign-in-page">
       {userDataState.isSignedIn === false && (
         <div
           className="sign-in-container"
@@ -92,14 +92,8 @@ export default function SigninPage() {
             />
           </div>
 
-          <button className="sign-in-btn" onClick={handleUserSignIn}>
-            Sign in
-          </button>
+          <button onClick={handleUserSignIn}>Sign in</button>
         </div>
-      )}
-
-      {userDataState.isSignedIn === false && (
-        <SalesBoard userDataState={userDataState} />
       )}
 
       {userDataState.isSignedIn && (

@@ -47,7 +47,6 @@ export default function SalesBoard(props) {
 
   const backgroundStyles = {
     backgroundColor: lightDarkMode ? "#9E4770" : "#201A23",
-    filter: userDataState.isSignedIn ? "none" : "blur(30px)",
   };
 
   const toggleBackGroundStyles = {
@@ -116,94 +115,96 @@ export default function SalesBoard(props) {
   }, [userProfileData.liveSalesCount]);
 
   return (
-    <div className="salesboard-container" style={backgroundStyles}>
-      <div className="sign-in-toggler-container">
-        <div className="sign-out-save-btn-container">
-          <button
-            className="sign-out-btn"
-            onClick={handleSignOut}
-            style={toggleBackGroundStyles}
-          >
-            Sign out
-          </button>
-          <button
-            id="save-btn"
-            className="save-btn"
-            style={toggleBackGroundStyles}
-            onClick={handleSaveBtn}
-            onMouseEnter={handleButtonHover}
-            onMouseLeave={handleButtonLeave}
-          >
-            S
-          </button>
-          {popupId === "save-btn" && (
-            <p>{saveBtnClickTracker ? "Data saved" : "Save data"}</p>
-          )}
-        </div>
-
-        <div className="toggle-area">
-          {popupId === "toggle-container" && (
-            <p>
-              {lightDarkMode === false
-                ? "switch to light mode"
-                : "switch to dark mode"}
-            </p>
-          )}
-          <div
-            id="toggle-container"
-            className="toggler-container"
-            onClick={handleToggler}
-            onMouseEnter={handleButtonHover}
-            onMouseLeave={handleButtonLeave}
-            style={toggleBackGroundStyles}
-          >
-            <div className="toggler" style={togglerStyles}></div>
+    <div className="salesboard">
+      <div className="salesboard-container" style={backgroundStyles}>
+        <div className="sign-in-toggler-container">
+          <div className="sign-out-save-btn-container">
+            <button
+              className="sign-out-btn"
+              onClick={handleSignOut}
+              style={toggleBackGroundStyles}
+            >
+              Sign out
+            </button>
+            <button
+              id="save-btn"
+              className="save-btn"
+              style={toggleBackGroundStyles}
+              onClick={handleSaveBtn}
+              onMouseEnter={handleButtonHover}
+              onMouseLeave={handleButtonLeave}
+            >
+              S
+            </button>
+            {popupId === "save-btn" && (
+              <p>{saveBtnClickTracker ? "Data saved" : "Save data"}</p>
+            )}
           </div>
-        </div>
-      </div>
 
-      <h1>Salesboard 🔔</h1>
-
-      <img
-        className="employee-img"
-        src={userDataState.userImgUrl}
-        alt="Employee"
-      />
-
-      <div className="sales-btn-container">
-        <button onClick={handleLiveSales} style={toggleBackGroundStyles}>
-          {productA.emoji}
-        </button>
-
-        <button onClick={handleLiveSales} style={toggleBackGroundStyles}>
-          {productB.emoji}
-        </button>
-      </div>
-
-      <h3>Live Sales - {userProfileData.liveSalesCount}</h3>
-      <div className="sales-achievements-container">
-        <div className="sales-achievements">{userProfileData.liveSales}</div>
-      </div>
-
-      <h3>Live Achievements - {userProfileData.liveAchievementsCount}</h3>
-      <div className="sales-achievements-container">
-        <div className="sales-achievements">
-          {userProfileData.liveAchievements}
-        </div>
-      </div>
-
-      <div className="revenue-commisions-container">
-        <div className="revenue">
-          <p>Total Revenue</p>
-          <div className="total-revenue total-revenue-commission">
-            ${userProfileData.totalRevenueAmount}
+          <div className="toggle-area">
+            {popupId === "toggle-container" && (
+              <p>
+                {lightDarkMode === false
+                  ? "switch to light mode"
+                  : "switch to dark mode"}
+              </p>
+            )}
+            <div
+              id="toggle-container"
+              className="toggler-container"
+              onClick={handleToggler}
+              onMouseEnter={handleButtonHover}
+              onMouseLeave={handleButtonLeave}
+              style={toggleBackGroundStyles}
+            >
+              <div className="toggler" style={togglerStyles}></div>
+            </div>
           </div>
         </div>
 
-        <div className="commision">
-          <p>Total Commission</p>
-          <div className="total-commision total-revenue-commission">
-            ${userProfileData.totalCommissionAmount}
+        <h1>Salesboard 🔔</h1>
+
+        <img
+          className="employee-img"
+          src={userDataState.userImgUrl}
+          alt="Employee"
+        />
+
+        <div className="sales-btn-container">
+          <button onClick={handleLiveSales} style={toggleBackGroundStyles}>
+            {productA.emoji}
+          </button>
+
+          <button onClick={handleLiveSales} style={toggleBackGroundStyles}>
+            {productB.emoji}
+          </button>
+        </div>
+
+        <h3>Live Sales - {userProfileData.liveSalesCount}</h3>
+        <div className="sales-achievements-container">
+          <div className="sales-achievements">{userProfileData.liveSales}</div>
+        </div>
+
+        <h3>Live Achievements - {userProfileData.liveAchievementsCount}</h3>
+        <div className="sales-achievements-container">
+          <div className="sales-achievements">
+            {userProfileData.liveAchievements}
+          </div>
+        </div>
+
+        <div className="revenue-commisions-container">
+          <div className="revenue">
+            <p>Total Revenue</p>
+            <div className="total-revenue total-revenue-commission">
+              ${userProfileData.totalRevenueAmount}
+            </div>
+          </div>
+
+          <div className="commision">
+            <p>Total Commission</p>
+            <div className="total-commision total-revenue-commission">
+              ${userProfileData.totalCommissionAmount}
+            </div>
           </div>
         </div>
       </div>
